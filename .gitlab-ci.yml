@@ -16,7 +16,7 @@ step-deploy:
   script:
     - echo running tests in TEST
     
-step-deploy-production:
+step-deploy:
   stage: deploy
   before_script:
     - export DYNAMIC_ENV_VAR=MASTER
