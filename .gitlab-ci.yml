@@ -6,7 +6,7 @@ stages:
   - test
   - deploy
 
-step-develop:
+step-deploy:
   stage: test
     - export DYNAMIC_ENV_VAR=DEVELOP
   only:
