@@ -5,7 +5,6 @@ FROM node:9.4.0-alpine as client
 
 WORKDIR /usr/app/client/
 COPY client/package*.json ./
-ENV CI=true
 RUN npm install -qy
 COPY client/ ./
 RUN npm run build
@@ -20,11 +19,12 @@ COPY --from=client /usr/app/client/build/ ./client/build/
 
 WORKDIR /usr/app/server/
 COPY server/package*.json ./
-ENV CI=true
 RUN npm install -qy
 COPY server/ ./
 
 ENV PORT 8000
+
+ENV CI=true
 
 EXPOSE 8000
 
