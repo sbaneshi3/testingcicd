@@ -24,8 +24,6 @@ COPY server/ ./
 
 ENV PORT 8000
 
-ENV CI=true
-
 EXPOSE 8000
 
 CMD ["npm", "start"]
